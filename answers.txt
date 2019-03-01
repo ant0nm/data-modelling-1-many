@@ -1,0 +1,96 @@
+1:
+SELECT id FROM authors WHERE name = 'Kara Melton'; #8
+SELECT title FROM articles WHERE author_id = 8;
+Output:
+title
+--------------------------------------------------------------------------------------------------
+How Tech Business Models Come From Marginalized Communities, But Startups Are Still Mostly White
+Confronting the Assumption of Whiteness in Virtual Spaces
+(2 rows)
+
+2:
+SELECT id FROM provinces WHERE name = 'Ontario'; #14
+SELECT name FROM cities WHERE province_id = 14;
+Output:
+  name
+---------
+Toronto
+Ottawa
+(2 rows)
+
+3:
+SELECT author_id FROM articles WHERE title = 'Coding Bootcamps and Emotional Labor'; #4
+SELECT name FROM authors WHERE id = 4;
+Output:
+       name
+-------------------
+Tilde Ann Thurium
+(1 row)
+
+4:
+SELECT COUNT(DISTINCT name) FROM provinces;
+Output:
+ count
+-------
+   13
+(1 row)
+
+5:
+SELECT id FROM residences WHERE address = '4740 McDermott Street'; #9
+SELECT COUNT(name) FROM persons WHERE residence_id = 9;
+Output:
+ count
+-------
+    2
+(1 row)
+
+6:
+SELECT city_id FROM residences WHERE address = '4740 McDermott Street'; #11
+SELECT name FROM cities WHERE id = 11;
+Output:
+  name
+--------
+Ottawa
+(1 row)
+
+7:
+SELECT city_id FROM residences WHERE address = '4740 McDermott Street'; #11
+SELECT province_id FROM cities WHERE id = 11; #14
+SELECT name FROM provinces WHERE id = 14;
+Output:
+  name
+---------
+Ontario
+(1 row)
+
+8:
+SELECT city_id FROM residences WHERE address = '4740 McDermott Street'; #11
+SELECT province_id FROM cities WHERE id = 11; #14
+SELECT country_id FROM provinces WHERE id = 14; #1
+SELECT name FROM countries WHERE id = 1;
+Output:
+  name
+--------
+Canada
+(1 row)
+
+9:
+SELECT residence_id FROM persons WHERE name = 'Destini Davis'; #2
+SELECT city_id FROM residences WHERE id = 2; #8
+SELECT province_id FROM cities WHERE id = 8; #14
+SELECT country_id FROM provinces WHERE id = 14; #1
+SELECT name FROM countries WHERE id = 1;
+Output:
+  name
+--------
+Canada
+(1 row)
+
+10:
+SELECT id FROM authors WHERE name = 'Aditya Mukerjee'; #2
+SELECT COUNT(title) FROM articles WHERE author_id = 2;
+Output:
+ count
+-------
+    1
+(1 row)
